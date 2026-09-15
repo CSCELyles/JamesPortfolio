@@ -67,3 +67,25 @@ function updateProgressBar() {
 window.addEventListener("scroll", updateProgressBar, { passive: true });
 window.addEventListener("resize", updateProgressBar);
 updateProgressBar();
+
+const documentButtons = document.querySelectorAll(".document-button");
+const pdfDialog = document.querySelector("#pdf-dialog");
+const pdfFrame = document.querySelector("#pdf-frame");
+const pdfDialogTitle = document.querySelector("#pdf-dialog-title");
+const pdfCloseButton = document.querySelector(".pdf-close");
+
+documentButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    pdfDialogTitle.textContent = button.dataset.title;
+    pdfFrame.src = `${button.dataset.pdf}#view=FitH`;
+    pdfDialog.showModal();
+  });
+});
+
+pdfCloseButton.addEventListener("click", () => {
+  pdfDialog.close();
+});
+
+pdfDialog.addEventListener("close", () => {
+  pdfFrame.removeAttribute("src");
+});

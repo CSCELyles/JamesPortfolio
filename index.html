@@ -9,9 +9,8 @@
 
 <body>
     <div class="scroll-progress" aria-hidden="true">
-        <div class="'scroll-process-bar"></div>
-    </div> 
-</div>
+        <div class="scroll-progress-bar"></div>
+    </div>
   <header id="home">
     <nav class="side-nav">
       <a class="logo" href="#home">JL</a>
@@ -32,13 +31,13 @@
     <div class="hero-orbit"></div>
 
     <div class="hero-content">
-      <p class="eyebrow">Personal Portfolio · James Lyles</p>
+      <p class="eyebrow">Personal Portfolio.</p>
       <p class="hero-kicker">Hello, I’m</p>
 
       <h1>James<br /><em>Lyles.</em></h1>
 
       <p class="hero-description">
-        Share my professional background, experience, and future goals.
+        Created so I can share my professional background, experience, <br>and future goals.</br>
       </p>
 
       <a class="scroll-cue" href="#intro">
@@ -46,8 +45,12 @@
       </a>
     </div>
 
-    <div class="portrait-placeholder" aria-label="Future profile photo area">
-      <p>Photo<br />coming soon</p>
+    <div class="portrait-placeholder">
+      <img
+      class="profile-photo"
+      src="images/Jay-6.png"
+      alt="Professional Headshot"
+      />
     </div>
 
     <p class="hero-index">01 <span>/</span> 06</p>
@@ -84,43 +87,109 @@
       <p class="section-label">Projects</p>
       <h2>Work in progress.</h2>
 
-      <div class="empty-projects">
-        <p>Projects, work samples, and accomplishments will be added here soon.</p>
-      </div>
+      <article class="project-card">
+  <div class="project-card-top">
+    <p class="project-number">01</p>
+    <p class="project-status" style="background-color: var(--green);">Completed</p>
+  </div>
+
+  <div>
+    <p class="project-type">Health Technology · Web App</p>
+
+    <h3>Healio</h3>
+
+    <p class="project-description">
+      Healio is a diabetes health app designed to help users log blood-glucose
+      readings, recognize trends, and keep a record of their health data.
+    </p>
+
+    <ul class="project-tags">
+      <li>Next.js</li>
+      <li>React</li>
+      <li>Supabase</li>
+    </ul>
+  </div>
+
+  <p class="project-note">
+    More project details and a live preview are coming soon.
+  </p>
+</article>
+<article class="project-card">
+  <div class="project-card-top">
+    <p class="project-number">02</p>
+    <p class="project-status">Open source</p>
+  </div>
+
+  <div>
+    <p class="project-type">AI · Healthcare Chatbot</p>
+
+    <h3>Cura</h3>
+
+    <p class="project-description">
+      Cura is a simple open-source healthcare chatbot that uses natural language
+      processing and retrieval-augmented generation to provide intelligent
+      symptom analysis and helpful health guidance.
+    </p>
+
+    <ul class="project-tags">
+      <li>AI Chatbot</li>
+      <li>NLP</li>
+      <li>RAG</li>
+    </ul>
+  </div>
+
+  <a
+    class="project-link"
+    href="https://github.com/CSCELyles/Cura"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View on GitHub ↗
+  </a>
+</article>
     </section>
 
-    <section class="documents-section" id="documents">
-      <p class="section-label">Professional Documents</p>
-      <h2>My résumé and cover letter.</h2>
+    <div class="document-grid">
+  <article class="document-card">
+    <button
+      class="document-button"
+      type="button"
+      data-pdf="documents/James_Lyles_Resume...pdf"
+      data-title="James Lyles — Resume"
+    >
+      <p class="document-number">01</p>
+      <h3>Resume</h3>
+      <p>View my current professional resume.</p>
+      <span class="coming-soon">Open PDF →</span>
+    </button>
+  </article>
 
-      <div class="document-grid">
-        <article class="document-card">
-          <p class="document-number">01</p>
-          <h3>Résumé</h3>
-          <p>My résumé will be added here soon.</p>
-          <span class="coming-soon">Coming soon</span>
-        </article>
-
-        <article class="document-card">
-          <p class="document-number">02</p>
-          <h3>Cover Letter</h3>
-          <p>My cover letter will be added here soon.</p>
-          <span class="coming-soon">Coming soon</span>
-        </article>
-      </div>
-    </section>
+  <article class="document-card">
+    <button
+      class="document-button"
+      type="button"
+      data-pdf="documents/Lyles_Cover Letter...pdf"
+      data-title="James Lyles — Cover Letter"
+    >
+      <p class="document-number">02</p>
+      <h3>Cover Letter</h3>
+      <p>View my current cover letter.</p>
+      <span class="coming-soon">Open PDF →</span>
+    </button>
+  </article>
+</div>
 
     <section class="contact-section" id="contact">
       <p class="section-label">Contact</p>
       <h2>Get in touch.</h2>
 
       <p>
-        Have an opportunity, question, or just want to get in touch? I would be
+        Have an opportunity, question, or just want to get in touch? I'd would be
         glad to hear from you.
       </p>
 
-      <a class="email-link" href="mailto:email@example.com">
-        email@example.com
+      <a class="email-link" href="mailto:jjelyles@gmail.com">
+       jjelyles@gmail.com
       </a>
     </section>
   </main>
@@ -129,6 +198,21 @@
     <p>© 2026 James Lyles. All rights reserved.</p>
     <a href="#home">Back to top ↑</a>
   </footer>
+  <dialog class="pdf-dialog" id="pdf-dialog">
+  <div class="pdf-dialog-header">
+    <p id="pdf-dialog-title">Document preview</p>
+
+    <button class="pdf-close" type="button" aria-label="Close document preview">
+      ×
+    </button>
+  </div>
+
+  <iframe
+    class="pdf-frame"
+    id="pdf-frame"
+    title="PDF document preview"
+  ></iframe>
+</dialog>
 
   <script src="script.js"></script>
 </body>
